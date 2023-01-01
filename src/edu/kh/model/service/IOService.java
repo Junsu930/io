@@ -169,26 +169,22 @@ public class IOService {
 
 	public void outputjs() {
 		
-		FileOutputStream fos = null;
+		FileWriter out = null;
 		
-		try{
-			fos = new FileOutputStream("test1.txt");
+		try {
+			out = new FileWriter("test1.txt");
 			
-			String str = "doolsseLL";
+			String str = "으아아 비상사태!";
 			
-			for(int i = 0; i<str.length(); i++) {
-				
-				fos.write(str.charAt(i));
-			}
+			out.write(str);
 			
-		}catch(IOException e){
 			
-			System.out.println("예외 발생");
+		}catch(IOException e) {
 			e.printStackTrace();
-		}finally {
 			
+		}finally {
 			try {
-				fos.close();
+				out.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -206,7 +202,6 @@ public class IOService {
 			while(true) {
 				int data;
 				data = fis.read();
-				
 				if(data == -1) {
 					break;
 				}
