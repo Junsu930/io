@@ -8,6 +8,6 @@ public class IORun {
 		
 		IOService ioservice = new IOService();
 		
-		ioservice.outputjs();
+		ioservice.inputjs();
 	}
 }
